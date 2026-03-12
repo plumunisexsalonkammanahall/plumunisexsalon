@@ -355,19 +355,35 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
+    nav { padding: 1rem 1.2rem; }
     .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; text-align: center; }
+    .nav-logo { font-size: 0.9rem; }
+    .hero { grid-template-columns: 1fr; padding: 5.5rem 1.2rem 3rem; text-align: center; }
+    .hero-eyebrow { justify-content: center; }
     .hero-subtitle { max-width: 100%; }
-    .hero-actions { justify-content: center; }
-    .hero-visual { margin-top: 2.5rem; }
-    .logo-ring { width: 260px; height: 260px; }
-    .hero-stats { justify-content: center; }
-    .services-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-    .about { grid-template-columns: 1fr; }
-    .about-badge { right: 10px; bottom: -14px; width: 90px; height: 90px; }
-    .section, .social-section { padding: 4rem 1.5rem; }
-    .contact { padding: 4rem 1.5rem; }
+    .hero-actions { justify-content: center; flex-direction: column; align-items: center; }
+    .btn-primary, .btn-outline { width: 100%; max-width: 300px; text-align: center; }
+    .hero-visual { margin-top: 2rem; }
+    .logo-ring { width: 220px; height: 220px; }
+    .hero-stats { justify-content: center; gap: 2rem; }
+    .section, .social-section { padding: 3.5rem 1.2rem; }
+    .services-grid { grid-template-columns: 1fr; max-width: 100%; }
+    .about { grid-template-columns: 1fr; padding: 3.5rem 1.2rem; gap: 2.5rem; }
+    .about-badge { right: 8px; bottom: -12px; width: 80px; height: 80px; }
+    .about-badge-num { font-size: 1.5rem; }
+    .social-links { flex-direction: column; align-items: center; }
+    .social-btn { width: 100%; max-width: 300px; justify-content: center; }
+    .contact { padding: 3.5rem 1.2rem; }
+    .contact-cards { flex-direction: column; align-items: center; }
+    .contact-card { width: 100%; max-width: 340px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 2.4rem; }
+    .section-title { font-size: 2rem; }
+    .logo-ring { width: 180px; height: 180px; }
+    .hero-stats { flex-direction: column; gap: 1rem; align-items: center; }
+    .stat-num { font-size: 1.8rem; }
   }
 </style>
 </head>
@@ -524,7 +540,7 @@
     <span class="section-eyebrow">Find Us</span>
     <h2 class="section-title">Visit <em>Plum</em> Salon</h2>
   </div>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; max-width:1100px; margin:0 auto;">
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; max-width:1100px; margin:0 auto;">
     <div>
       <p style="font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem;">📍 Google Maps</p>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.295069151118!2d77.63687637420567!3d13.01687231388585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17c0d57e9d61%3A0x6a4d06f7e4be5dc3!2sPlum%20unisex%20salon!5e0!3m2!1sen!2sin!4v1773350549840!5m2!1sen!2sin"
@@ -554,7 +570,7 @@
     <p style="color:var(--text-light);font-size:0.92rem;margin-top:1rem;">Real experiences from our valued clients</p>
   </div>
   <div style="max-width:900px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:1.5rem;margin-bottom:2.5rem;">
       <div class="service-card">
         <div style="margin-bottom:0.7rem;">⭐⭐⭐⭐⭐</div>
         <p style="font-size:0.87rem;color:var(--text-light);line-height:1.7;margin-bottom:1rem;">"Amazing experience! The hydra facial left my skin glowing. Staff is very professional and welcoming."</p>
@@ -574,7 +590,7 @@
         <div style="font-size:0.72rem;color:var(--text-light);">Google Review</div>
       </div>
     </div>
-    <div style="text-align:center;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <div style="text-align:center;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;flex-direction:row;">
       <a href="https://www.google.com/maps/place/Plum+unisex+salon/@13.0168723,77.6368764,17z" target="_blank" class="btn-outline">
         ⭐ &nbsp;See All Reviews on Google
       </a>
