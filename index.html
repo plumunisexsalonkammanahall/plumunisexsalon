@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plum Unisex Salon – Kammanahalli, Bangalore</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum: #6B2D5E;
+    --plum-deep: #3D1435;
+    --plum-light: #9B4D8A;
+    --plum-pale: #E8D5E4;
+    --gold: #C9A96E;
+    --gold-light: #F0DFB8;
+    --cream: #FAF6F0;
+    --dark: #1A0A16;
+    --text: #2E1428;
+    --text-light: #7A5470;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(250,246,240,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(107,45,94,0.12);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--plum);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-light); text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--plum); }
+  .nav-cta {
+    background: var(--plum); color: #fff !important;
+    padding: 0.55rem 1.4rem; border-radius: 50px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--plum-light) !important; color: #fff !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 7rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(107,45,94,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  /* decorative circles */
+  .hero-deco {
+    position: absolute; border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-deco-1 {
+    width: 520px; height: 520px;
+    right: -60px; top: 50%; transform: translateY(-50%);
+    background: linear-gradient(135deg, var(--plum) 0%, var(--plum-deep) 100%);
+    opacity: 0.07;
+  }
+  .hero-deco-2 {
+    width: 180px; height: 180px;
+    right: 18%; bottom: 12%;
+    border: 2px solid var(--gold);
+    opacity: 0.25;
+  }
+  .hero-deco-3 {
+    width: 60px; height: 60px;
+    left: 46%; top: 18%;
+    background: var(--gold);
+    opacity: 0.18;
+  }
+
+  .hero-content { position: relative; z-index: 2; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 1.4rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 1px;
+    background: var(--gold);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.2rem);
+    font-weight: 300; line-height: 1.08;
+    color: var(--plum-deep);
+    margin-bottom: 1.4rem;
+  }
+  .hero-title em { font-style: italic; color: var(--plum); }
+  .hero-subtitle {
+    font-size: 0.95rem; line-height: 1.8;
+    color: var(--text-light); max-width: 440px;
+    margin-bottom: 2.6rem; font-weight: 400;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--plum); color: #fff;
+    padding: 0.9rem 2.2rem; border-radius: 50px;
+    font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(107,45,94,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(107,45,94,0.4); }
+  .btn-outline {
+    border: 1.5px solid var(--plum); color: var(--plum);
+    padding: 0.9rem 2.2rem; border-radius: 50px;
+    font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { background: var(--plum); color: #fff; }
+
+  .hero-visual {
+    position: relative; z-index: 2;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .logo-ring {
+    width: 360px; height: 360px; border-radius: 50%;
+    background: linear-gradient(145deg, var(--plum-pale), #fff);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 20px 60px rgba(107,45,94,0.2), inset 0 0 40px rgba(255,255,255,0.6);
+    position: relative;
+  }
+  .logo-ring::after {
+    content: '';
+    position: absolute; inset: -12px;
+    border-radius: 50%;
+    border: 1px solid rgba(107,45,94,0.18);
+  }
+  .logo-ring img {
+    width: 78%; height: 78%; object-fit: contain;
+  }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3rem;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 600;
+    color: var(--plum); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-light); margin-top: 0.3rem;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 0 3rem; margin: 1rem 0;
+  }
+  .divider-line { flex: 1; height: 1px; background: rgba(107,45,94,0.15); }
+  .divider-icon { color: var(--gold); font-size: 1.2rem; }
+
+  /* ── SERVICES ── */
+  .section { padding: 6rem 3rem; }
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 1rem;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+    font-weight: 300; color: var(--plum-deep); line-height: 1.15;
+  }
+  .section-title em { font-style: italic; color: var(--plum); }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; max-width: 1100px; margin: 0 auto;
+  }
+  .service-card {
+    background: #fff;
+    border-radius: 16px; padding: 2.2rem;
+    border: 1px solid rgba(107,45,94,0.1);
+    position: relative; overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .service-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--plum), var(--gold));
+    opacity: 0; transition: opacity 0.25s;
+  }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(107,45,94,0.14); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem; font-weight: 600;
+    color: var(--plum-deep); margin-bottom: 0.6rem;
+  }
+  .service-desc { font-size: 0.87rem; color: var(--text-light); line-height: 1.7; }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--plum-deep);
+    color: #fff; padding: 6rem 3rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+    max-width: 100%;
+  }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-store-img {
+    width: 100%; border-radius: 16px;
+    object-fit: cover; aspect-ratio: 4/3;
+    display: block;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+  .about-badge {
+    position: absolute; bottom: -18px; right: -18px;
+    background: var(--gold); color: var(--plum-deep);
+    width: 110px; height: 110px; border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  }
+  .about-badge-num { font-size: 2rem; font-weight: 700; line-height: 1; }
+  .about-badge-text { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; }
+  .about-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 1.2rem; display: block;
+  }
+  .about-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 3rem); font-weight: 300;
+    line-height: 1.15; margin-bottom: 1.4rem;
+  }
+  .about-title em { font-style: italic; color: var(--plum-light); }
+  .about-text { font-size: 0.92rem; line-height: 1.85; color: rgba(255,255,255,0.72); margin-bottom: 2rem; }
+  .about-features { display: flex; flex-direction: column; gap: 0.9rem; }
+  .about-feature {
+    display: flex; align-items: center; gap: 0.8rem;
+    font-size: 0.87rem; color: rgba(255,255,255,0.85);
+  }
+  .about-feature::before {
+    content: '✦'; color: var(--gold); font-size: 0.7rem; flex-shrink: 0;
+  }
+
+  /* ── SOCIAL ── */
+  .social-section { padding: 5rem 3rem; text-align: center; }
+  .social-links {
+    display: flex; gap: 1.5rem; justify-content: center;
+    margin-top: 2.5rem; flex-wrap: wrap;
+  }
+  .social-btn {
+    display: flex; align-items: center; gap: 0.8rem;
+    padding: 0.9rem 2rem; border-radius: 50px;
+    text-decoration: none; font-size: 0.82rem;
+    font-weight: 600; letter-spacing: 0.08em;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .social-btn:hover { transform: translateY(-3px); }
+  .social-btn.instagram {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(131,58,180,0.35);
+  }
+  .social-btn.whatsapp {
+    background: #25D366; color: #fff;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  }
+  .social-btn.youtube {
+    background: #FF0000; color: #fff;
+    box-shadow: 0 4px 20px rgba(255,0,0,0.3);
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: linear-gradient(135deg, var(--plum) 0%, var(--plum-deep) 100%);
+    padding: 5rem 3rem; text-align: center; color: #fff;
+  }
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300;
+    margin-bottom: 0.8rem;
+  }
+  .contact-subtitle { color: rgba(255,255,255,0.7); font-size: 0.92rem; margin-bottom: 3rem; }
+  .contact-cards {
+    display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+    max-width: 800px; margin: 0 auto 3rem;
+  }
+  .contact-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px; padding: 2rem 2.5rem;
+    flex: 1; min-width: 220px;
+  }
+  .contact-card-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .contact-card-label {
+    font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .contact-card-value { font-size: 0.95rem; color: #fff; line-height: 1.6; }
+  .contact-card-value a { color: #fff; text-decoration: none; }
+  .contact-card-value a:hover { color: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.45);
+    text-align: center; padding: 1.8rem;
+    font-size: 0.78rem; letter-spacing: 0.06em;
+  }
+  footer span { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow  { animation: fadeUp 0.7s 0.1s both; }
+  .hero-title    { animation: fadeUp 0.7s 0.25s both; }
+  .hero-subtitle { animation: fadeUp 0.7s 0.4s both; }
+  .hero-actions  { animation: fadeUp 0.7s 0.55s both; }
+  .hero-stats    { animation: fadeUp 0.7s 0.7s both; }
+  .logo-ring     { animation: fadeUp 0.9s 0.3s both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; text-align: center; }
+    .hero-subtitle { max-width: 100%; }
+    .hero-actions { justify-content: center; }
+    .hero-visual { margin-top: 2.5rem; }
+    .logo-ring { width: 260px; height: 260px; }
+    .hero-stats { justify-content: center; }
+    .services-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    .about { grid-template-columns: 1fr; }
+    .about-badge { right: 10px; bottom: -14px; width: 90px; height: 90px; }
+    .section, .social-section { padding: 4rem 1.5rem; }
+    .contact { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Plum <span>Salon</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/919148453796" target="_blank" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-deco hero-deco-1"></div>
+  <div class="hero-deco hero-deco-2"></div>
+  <div class="hero-deco hero-deco-3"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Kammanahalli, Bangalore</p>
+    <h1 class="hero-title">Where <em>Beauty</em><br>Meets Craft</h1>
+    <p class="hero-subtitle">
+      A modern unisex salon offering premium hair, skin, and nail services in a luxurious, welcoming space. Your transformation starts here.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/919148453796" target="_blank" class="btn-primary">Book an Appointment</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Premium Products</div>
+      </div>
+      <div>
+        <div class="stat-num">✦</div>
+        <div class="stat-label" style="visibility:hidden">–</div>
+      </div>
+      <div>
+        <div class="stat-num">Men &amp; Women</div>
+        <div class="stat-label">Unisex Services</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="logo-ring">
+      <img src="logo.jpg" alt="Plum Unisex Salon Logo">
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-icon">✦</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-header">
+    <span class="section-eyebrow">What We Offer</span>
+    <h2 class="section-title">Our <em>Signature</em> Services</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">💇‍♀️</div>
+      <div class="service-name">Hair Styling & Cuts</div>
+      <div class="service-desc">Expert cuts, blow-dries, and styling for men and women. Keratin treatments, smoothening, and colour services tailored to your look.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <div class="service-name">Hydra Facial</div>
+      <div class="service-desc">Advanced hydra facial treatments that deeply cleanse, exfoliate, and hydrate your skin — leaving you with a radiant, refreshed glow.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💅</div>
+      <div class="service-name">Nail Art & Extensions</div>
+      <div class="service-desc">From classic manicures and pedicures to elaborate nail art and full extensions — our nail artists make every detail count.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🪮</div>
+      <div class="service-name">Men's Grooming</div>
+      <div class="service-desc">Precision haircuts, beard shaping, and grooming treatments designed specifically for the modern man.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌿</div>
+      <div class="service-name">Skin & Beauty Treatments</div>
+      <div class="service-desc">Facials, clean-ups, threading, waxing, and more — all using quality products for lasting results.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">👑</div>
+      <div class="service-name">Bridal & Party Makeup</div>
+      <div class="service-desc">Look your best for every occasion. Our skilled makeup artists deliver stunning looks for weddings, events, and special moments.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-icon">✦</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-img-wrap">
+    <img class="about-store-img" src="storefront.jpg" alt="Plum Unisex Salon storefront">
+    <div class="about-badge">
+      <div class="about-badge-num">5★</div>
+      <div class="about-badge-text">Rated Salon</div>
+    </div>
+  </div>
+  <div class="about-content">
+    <span class="about-eyebrow">Our Story</span>
+    <h2 class="about-title">A <em>Luxurious</em> Escape in the Heart of Kammanahalli</h2>
+    <p class="about-text">
+      Experience top-tier beauty services at Plum Unisex Salon — a modern and stylish destination committed to enhancing your natural beauty. Our skilled team is dedicated to providing a luxurious and welcoming atmosphere for every client, every visit.
+    </p>
+    <div class="about-features">
+      <div class="about-feature">Premium products & professional techniques</div>
+      <div class="about-feature">Full-service salon for men &amp; women</div>
+      <div class="about-feature">Clean, modern, and welcoming environment</div>
+      <div class="about-feature">Experienced and passionate stylists</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social-section">
+  <span class="section-eyebrow">Follow & Connect</span>
+  <h2 class="section-title">Find Us <em>Online</em></h2>
+  <div class="social-links">
+    <a href="https://www.instagram.com/plum.unisexsalon/" target="_blank" class="social-btn instagram">
+      📸 &nbsp;Instagram
+    </a>
+    <a href="https://wa.me/919148453796" target="_blank" class="social-btn whatsapp">
+      💬 &nbsp;WhatsApp Us
+    </a>
+    <a href="https://www.youtube.com/@Plum-unisexsalon" target="_blank" class="social-btn youtube">
+      ▶ &nbsp;YouTube
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2 class="contact-title">Visit Us Today</h2>
+  <p class="contact-subtitle">Walk in or book your appointment in advance — we'd love to see you.</p>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="contact-card-icon">📍</div>
+      <div class="contact-card-label">Location</div>
+      <div class="contact-card-value">
+        No. 16, First Floor, 5th Main Rd,<br>
+        Near Bucket Biryani, PNS Layout,<br>
+        Kammanahalli, Bengaluru – 560084
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">📞</div>
+      <div class="contact-card-label">Phone / WhatsApp</div>
+      <div class="contact-card-value">
+        <a href="tel:+919148453796">+91 91484 53796</a>
+      </div>
+    </div>
+  </div>
+  <a href="https://wa.me/919148453796" target="_blank" class="btn-primary" style="background:#fff;color:var(--plum);box-shadow:0 4px 20px rgba(0,0,0,0.2);">
+    📲 &nbsp;Book via WhatsApp
+  </a>
+</section>
+
+<footer>
+  © 2026 <span>Plum Unisex Salon</span> · Kammanahalli, Bangalore · All rights reserved
+</footer>
+
+</body>
+</html>
